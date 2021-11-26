@@ -1,0 +1,36 @@
+body{
+    background-color: #D4E4F2;
+}
+
+table{
+    max-width: 1400px;
+}
+/*estilos para la tabla*/
+table th {
+    background-color: #337ab7 !important;
+    color: white;
+    width: 80px;
+    max-width: 87.5px;
+}
+table>tbody>tr>td {
+    vertical-align: middle !important;
+}
+
+/*para alinear los botones y cuadro de busqueda*/
+.btn-group, .btn-group-vertical {
+    position: absolute !important;
+}
+
+.boton{
+    width: 100%;
+    display: flex;
+    justify-self: center;
+}
+
+.form-radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
