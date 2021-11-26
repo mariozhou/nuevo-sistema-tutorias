@@ -39,8 +39,8 @@
 include("config/bd.php");//conexion
 $sentenciaSQL = $conexion->prepare("SELECT m.NombreTutor as Tutor,SUM(r.deserto) as Deserto, 
 SUM(r.Acredito) as Acredito, SUM(r.Noacredito) as Noacredito,  
-r.deserto + r.Acredito + r.Noacredito as total,
-r.HoraSesionIndiv, r.HoraSesionGrup, SUM(r.Psicologia+r.Asesoria) as cana, 
+count(r.deserto + r.Acredito + r.Noacredito) as total,
+r.HoraSesionIndiv, r.HoraSesionGrup, count(r.Psicologia+r.Asesoria) as cana, 
 SUM(r.Conferencias) as Conferencias, SUM(r.Talleres) as Talleres FROM tutor as m 
 Join reporte as r ON m.IdTutor = r.Idtutor  Group BY m.NombreTutor ASC");  
 $sentenciaSQL->execute();
@@ -65,11 +65,8 @@ ORDER BY tutorados.NombreTutorado ASC");
 $sentenciaSQL1->execute();
 $atendidas = $sentenciaSQL1->fetchAll(PDO::FETCH_OBJ);
 
-$sentenciaSQL1 = $conexion->prepare("SELECT tutorados.NombreTutorado,
-tutorados.IdTutorado, canalizacion.Tipo,
-impact.AssDep FROM tutorados 
-JOIN canalizacion ON tutorados.IdTutorado = canalizacion.IdTutorado 
-JOIN impact ON canalizacion.idTutorado = impact.idTutorado
+$sentenciaSQL1 = $conexion->prepare("SELECT* FROM tutorados 
+JOIN impact WHERE tutorados.IdTutorado = impact.IdTutorado
 ORDER BY tutorados.NombreTutorado ASC");  
 $sentenciaSQL1->execute();
 $Impacto = $sentenciaSQL1->fetchAll(PDO::FETCH_OBJ);
@@ -150,14 +147,15 @@ $Impacto = $sentenciaSQL1->fetchAll(PDO::FETCH_OBJ);
                         <th >Nombre Del Alumno</th>
                         <th>No. Control</th>
                         <th>Tipo de Canalizacion</th>
-                        <th>Horas Atendidas</th>
+                    
                         </tr>";
                     }else if($opcion == 'Impacto'){
                         echo"
                         <th >Nombre Del Tutorado</th>
                         <th>No. Control</th>
-                        <th>Tipo de Canalizacion</th>
-                        <th>Impacto</th>
+                        <th>Psicologica</th>
+                        <th>Asesoria Departamenta</th>
+                        <th>Asesoria Ciencias Basicas</th>
     
                     </tr>";
     
@@ -222,8 +220,10 @@ $Impacto = $sentenciaSQL1->fetchAll(PDO::FETCH_OBJ);
                     echo "<tr>
                     <td>".$result -> NombreTutorado."</td>
                     <td>".$result -> IdTutorado."</td>
-                    <td>".$result -> Tipo."</td>
+                    <td>".$result -> Psi."</td>    
                     <td>".$result -> AssDep."</td>
+                    <td>".$result -> AssBC."</td>
+                    
     
                     </tr>"; 
                      }else if($opcion == 'Atendidas'){
@@ -232,7 +232,7 @@ $Impacto = $sentenciaSQL1->fetchAll(PDO::FETCH_OBJ);
                     <td>".$result -> NombreTutorado."</td>
                     <td>".$result -> IdTutorado."</td>
                     <td>".$result -> Tipo."</td>
-                    <td>".$result -> HoraAtend."</td>
+                 
     
                     </tr>"; 
                      }else{

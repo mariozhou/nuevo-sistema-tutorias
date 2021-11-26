@@ -18,17 +18,16 @@
                         <h4>Asignar Tutores</h4>
                 </div>
                 </a>
-    <!--
+   
                 <a href="JD-AgregarAlumno.php" style="text-decoration:none"> 
                 <div class="card">
                     <img src="img/aceptado.png" >
                         <h4>Agregar Alumno</h4>
                 </div>
                 </a>
-                    manana temprano pa  practicar 
-                    bueno ahorita voy a hacer una prueba
-                    
--->  
+                
+
+
                 <a href="JD-verExpediente.php" style="text-decoration:none"> 
                 <div class="card">
                     <img src="img/vision.png" >
