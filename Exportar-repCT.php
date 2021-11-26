@@ -137,8 +137,8 @@ $Impacto = $sentenciaSQL1->fetchAll(PDO::FETCH_OBJ);
     </div>
     </form>     
 
-        <div  max-width="1400px">
-            <table id="example" class="table table-bordered" max-width="1400px"> 
+    <div  div class="table-responsive">
+            <table id = "example" class="table table-bordered table-striped table-hover"  width="100%">
            <thead>
            <?php if($opcion == 'Solicitadas'){
                         echo"<tr>

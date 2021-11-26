@@ -3,9 +3,12 @@ main{
     grid-template-areas: "a" "b" ;
     grid-auto-rows: 45px auto;
     background-color: #D4E4F2;
-    height: 600px;
+    height: auto;
 }
 
+body{
+    background-color: #D4E4F2;
+}
 .panel-botones{
     margin-top: 45px;
 }
@@ -20,7 +23,7 @@ main{
     border: 2px;
     border-radius: 20px;
     font-size: 18px;
-    color: white;
+    color: #D4E4F2;
 
 }
 .texto{
