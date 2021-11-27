@@ -21,7 +21,7 @@
    
                 <a href="JD-AgregarAlumno.php" style="text-decoration:none"> 
                 <div class="card">
-                    <img src="img/aceptado.png" >
+                    <img src="img/alumno2.png" >
                         <h4>Agregar Alumno</h4>
                 </div>
                 </a>

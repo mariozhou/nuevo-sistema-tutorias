@@ -234,7 +234,7 @@ if(  (isset($_POST['botones'])) ){
                 <div>
                   <br>
                 <label for="DESEMPEÑO" class="control-label col-md-3">Psicologica</label>
-                <textarea  type="text" placeholder="" name="psi" id="psi" cols="40" rows="5"><?php echo $psix; ?></textarea>
+                <textarea  type="text" placeholder="" name="psix" id="psix" cols="40" rows="5"><?php echo $psix; ?></textarea>
                 </div>
                 <div>
                 <label for="DESEMPEÑO" class="control-label col-md-5">Asesoria Departamental</label>
